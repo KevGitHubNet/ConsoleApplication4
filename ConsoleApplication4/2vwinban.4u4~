@@ -1,0 +1,56 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication4
+{
+    class Program
+    {
+        enum manager { level1, level2, director };
+
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter the item type, description, and expense: ");
+            string type = Console.ReadLine();
+            string description = Console.ReadLine();
+            double expense = double.Parse(Console.ReadLine());
+
+            decision(type, description, expense);
+            
+        }
+
+        public static void decision(string type, string description, double expense)
+        {
+            bool accepted = false;
+            if (type == "hardware" && expense > 5000)
+            {
+                //return accepted;
+                Console.WriteLine("Not approved");
+            }
+            else if (!description.Contains("entertainment") && expense <= 250)
+            {
+                Console.WriteLine("1st level manager approved");
+                return;
+            }
+            else if (!description.Contains("town car") && expense <= 500)
+            {
+                Console.WriteLine("2nd level manager approved");
+                return;
+            }
+            else if (expense > 1000)
+            {
+                Console.WriteLine("director approved");
+                return;
+            }
+            else
+            {
+                Console.WriteLine("Not approved");
+                return;
+            }
+           
+        }
+    }
+}
