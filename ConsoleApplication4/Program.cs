@@ -134,7 +134,7 @@ class SecondLvlMgr : Manager
 
     public override void getDecision(bool isHardware)
     {
-        Director director = new Director(description, expense);
+        Director director = new Director(expense);
         if(description.Contains("towncar"))
         {
             Console.WriteLine("Request rejected by second level manager");
@@ -152,9 +152,8 @@ class SecondLvlMgr : Manager
 
 class Director : Manager
 {
-    public Director(string description, double expense)
+    public Director(double expense)
     {
-        // TODO: Complete member initialization
         this.description = description;
         this.expense = expense;
     }
