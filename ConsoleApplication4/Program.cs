@@ -8,7 +8,6 @@ namespace VerifyExpense
 {
     class Program
     {
-        
         static void Main(string[] args)
         {
             string description = "";
@@ -26,12 +25,12 @@ namespace VerifyExpense
             
                 if (hardwareItem.Equals("y") || hardwareItem.Equals("Y"))
                 {
-                    mgr.IsHardwareItem = true;
+                    mgr.IsHardwareItem = true;   //set 
                     break;
                 }
                 else if (hardwareItem.Equals("n") || hardwareItem.Equals("N"))
                 {
-                    mgr.IsHardwareItem = false;
+                    mgr.IsHardwareItem = false;  //set
                     break;
                 }
                 else
@@ -40,7 +39,7 @@ namespace VerifyExpense
                 }
             }
            
-            mgr.getDecision(mgr.IsHardwareItem);    
+            mgr.getDecision(mgr.IsHardwareItem);    //get
         }
     }
 }
@@ -73,7 +72,7 @@ class FirstLvlMgr : Manager
         }
         else
         {
-            secondMgr.getDecision(isHardware);
+            secondMgr.getDecision(isHardware);  //get
         }  
     }
 }
@@ -100,7 +99,7 @@ class SecondLvlMgr : Manager
         }
         else
         {
-            director.getDecision(isHardware);
+            director.getDecision(isHardware);   //get
         }
     }
 }
